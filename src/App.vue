@@ -27,30 +27,37 @@ const calendarConfig = {
     year: null,
     day: {
       eventRenderer({ eventRecord }) {
-        return {
-          vue: true, // Tells Bryntum to render it as a Vue component
-          is: 'CalendarViewEvent', // Must match your global component name
-          bind: { eventRecord }, // Pass data to the component
-        };
+        return new Widget({
+          html : {
+            vue: true, // Required flag
+            is: 'CalendarViewEvent', // must be registered
+            bind: { eventRecord },
+          }
+        }).html;
       },
     },
     week: {
       eventRenderer({ eventRecord }) {
-        return {
-          vue: true, // Tells Bryntum to render it as a Vue component
-          is: 'CalendarViewEvent', // Must match your global component name
-          bind: { eventRecord }, // Pass data to the component
-        };
+        return new Widget({
+          html : {
+            vue: true, // Required flag
+            is: 'CalendarViewEvent', // must be registered
+            bind: { eventRecord },
+          }
+        }).html;
       },
     },
     month: {
       eventRenderer({ eventRecord, renderData }) {
         renderData.solidBar = true;
 
-        return {
-          vue: true, // Tells Bryntum to render it as a Vue component
-          is: 'CalendarViewEventCompact', // Must match your global component name
-        };
+        return new Widget({
+          html : {
+            vue: true, // Required flag
+            is: 'CalendarViewEvent', // must be registered
+            bind: { eventRecord },
+          }
+        }).html;
       },
     },
   },

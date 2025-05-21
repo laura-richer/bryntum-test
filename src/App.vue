@@ -25,46 +25,12 @@ const calendarConfig = {
   modes: {
     agenda: null,
     year: null,
-    day: {
-      eventRenderer({ eventRecord }) {
-        return new Widget({
-          html : {
-            vue: true, // Required flag
-            is: 'CalendarViewEvent', // must be registered
-            bind: { eventRecord },
-          }
-        }).html;
-      },
-    },
-    week: {
-      eventRenderer({ eventRecord }) {
-        return new Widget({
-          html : {
-            vue: true, // Required flag
-            is: 'CalendarViewEvent', // must be registered
-            bind: { eventRecord },
-          }
-        }).html;
-      },
-    },
-    month: {
-      eventRenderer({ eventRecord, renderData }) {
-        renderData.solidBar = true;
-
-        return new Widget({
-          html : {
-            vue: true, // Required flag
-            is: 'CalendarViewEvent', // must be registered
-            bind: { eventRecord },
-          }
-        }).html;
-      },
-    },
   },
 };
 </script>
 
 <template>
+  <p>Hello World</p>
   <bryntum-calendar
     v-bind="calendarConfig"
     :events="calendarItems"
